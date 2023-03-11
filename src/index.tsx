@@ -9,7 +9,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <App/>
+    {/* Use for develeopemnt process (Show Warnings) Not a compulsory = React.StrictMode */}
+    <App />
+    {/* Root Component for whole project = App */}
   </React.StrictMode>
 );
 
