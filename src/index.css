@@ -7,8 +7,4 @@
   h1 {
     @apply text-xl sm:text-2xl md:justify-center font-bold text-red-700 font-extrabold;
   }
-
-  h2 {
-    @apply text-base lg:text-2xl font-bold;
-  }
 }
