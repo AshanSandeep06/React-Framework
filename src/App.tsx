@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 export default class App extends Component {
   componentDidMount(): void {
@@ -10,8 +12,10 @@ export default class App extends Component {
 
   render(): React.ReactNode {
     return (
-      <div className="bg-green-500 border-l-pink-700 min-h-screen">
+      <div className="bg-blue-800 border-l-pink-700 min-h-screen">
         <Home />
+        <About />
+        <Contact />
       </div>
     );
   }

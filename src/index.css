@@ -7,4 +7,8 @@
   h1 {
     @apply text-xl sm:text-2xl md:justify-center font-bold text-abc-100;
   }
+
+  div {
+    @apply text-white text-3xl;
+  }
 }
