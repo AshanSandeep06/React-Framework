@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Counter from "./components/Counter";
+import Header from "./components/Header";
+import Content from "./components/Content";
 
 export default class App extends Component {
   componentDidMount(): void {
@@ -16,8 +14,10 @@ export default class App extends Component {
       <div className="border-l-pink-700 min-h-screen">
         {/* <Home />
         <About />
-        <Contact /> */}
-        <Counter/>
+        <Contact />
+        <Counter/> */}
+        <Header />
+        <Content />
       </div>
     );
   }

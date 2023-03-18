@@ -8,17 +8,38 @@ type CounterState = {
 
 export default class Counter extends Component<CounterProps, CounterState> {
   constructor(props: CounterProps) {
+    console.log("Constructor Called..!");
     super(props);
 
     this.state = {
       count: 0,
     };
+
+    // Binding Normal Functions into class based Components
+    this.increaseCount = this.increaseCount.bind(this);
   }
 
-  increaseCount = () => {
-    this.setState({ count: this.state.count + 1 });
-  };
+  componentDidMount(): void {
+    console.log("Component Mounted..!");
+  }
 
+  componentDidUpdate(): void {
+    console.log("Component Updated..!");
+  }
+
+  componentWillUnmount(): void {
+    console.log("Component Unmounted..!");
+  }
+
+  //   increaseCount = () => {
+  //     this.setState({ count: this.state.count + 1 });
+  //   };
+
+  increaseCount() {
+    this.setState({ count: this.state.count + 1 });
+  }
+
+  // Arrow Function
   decreaseount = () => {
     this.setState({ count: this.state.count - 1 });
   };

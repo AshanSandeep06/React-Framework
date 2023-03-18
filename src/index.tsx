@@ -8,11 +8,11 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    {/* Use for develeopemnt process (Show Warnings) Not a compulsory = React.StrictMode */}
+  //<React.StrictMode>
+    // {/* Use for develeopemnt process (Show Warnings) Not a compulsory = React.StrictMode */}
+    // {/* Root Component for whole project = App */}
     <App />
-    {/* Root Component for whole project = App */}
-  </React.StrictMode>
+  //</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
