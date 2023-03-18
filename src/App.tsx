@@ -13,7 +13,7 @@ export default class App extends Component {
 
   render(): React.ReactNode {
     return (
-      <div className="bg-black border-l-pink-700 min-h-screen">
+      <div className="border-l-pink-700 min-h-screen">
         {/* <Home />
         <About />
         <Contact /> */}
