@@ -5,6 +5,6 @@
 @layer base {
   /* You can add more generic styles here (Globally) */
   h1 {
-    @apply text-xl sm:text-2xl md:justify-center font-bold;
+    @apply text-xl sm:text-2xl md:justify-center font-bold font-poppins;
   }
 }
