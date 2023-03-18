@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Content extends Component {
   render() {
     return (
-      <div className="mt-20 border-4 border-red-800">
+      <div className="mt-20 border-4 border-red-800 font-poppins">
         <h1>Hello World..!</h1>
         <h1>Hello World..!</h1>
         <h1>Hello World..!</h1>
