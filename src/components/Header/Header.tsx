@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import UserImage from "../../assets/User.png";
 
 export default class Header extends Component {
@@ -8,15 +9,19 @@ export default class Header extends Component {
         <div className="w-full h-full">
           <div className="flex w-full h-full items-center">
             <div className="w-1/2">
-              <h1 className="font-mono">Ashan Sandeep</h1>
+              <h1>Ashan Sandeep</h1>
             </div>
 
             <div className="w-1/2">
               <div className="flex w-full justify-between font-poppins items-center">
-                <h4 className="cursor-pointer">Home</h4>
-                <h4>About</h4>
-                <h4>Contact</h4>
-                <img src={UserImage} alt="UserImage" className="w-10 h-10" />
+                <Link to={"/home"}>Home</Link>
+                <Link to={"/about"}>About</Link>
+                <Link to={"/contact"}>Contact</Link>
+                <img
+                  src={UserImage}
+                  alt="UserImage"
+                  className="w-10 h-10 rounded-full"
+                />
               </div>
             </div>
           </div>

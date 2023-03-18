@@ -3,15 +3,18 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   //<React.StrictMode>
-    // {/* Use for develeopemnt process (Show Warnings) Not a compulsory = React.StrictMode */}
-    // {/* Root Component for whole project = App */}
+  // {/* Use for develeopemnt process (Show Warnings) Not a compulsory = React.StrictMode */}
+  // {/* Root Component for whole project = App */}
+  <BrowserRouter>
     <App />
+  </BrowserRouter>
   //</React.StrictMode>
 );
 
