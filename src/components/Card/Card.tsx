@@ -1,6 +1,18 @@
 import React, { Component } from "react";
 
-export default class Card extends Component {
+type CardDetails = {
+    id: string,
+    title: string,
+    description: string
+}
+
+type CardProps = {};
+
+type CardState = {
+    cardList: CardDetails[]
+};
+
+export default class Card extends Component<CardProps, CardState> {
   render() {
     return (
       <div className="border border-slate-400 px-3 py-2">
