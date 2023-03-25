@@ -15,11 +15,9 @@ export default class Post extends Component<PostProps> {
         <p>{this.props.description}</p>
 
         <span className="w-full mt-3 flex space-x-3">
-        
-
-          {/* <Tag tag={this.props.tags[0]} />
-          <Tag tag={this.props.tags[1]} />
-          <Tag tag={this.props.tags[2]} /> */}
+          {this.props.tags.map((text) => (
+            <Tag tag={text} />
+          ))}
         </span>
       </div>
     );
