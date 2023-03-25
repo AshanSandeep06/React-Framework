@@ -8,7 +8,7 @@ import Home from "../../pages/Home";
 export default class Content extends Component {
   render() {
     return (
-      <div className="flex justify-center items-center h-screen">
+      <div className="mt-20 px-4 pt-3">
         <Routes>
           <Route path="/home" element={<Home />}></Route>
           <Route path="/about" element={<About />}></Route>
