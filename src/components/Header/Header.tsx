@@ -12,7 +12,7 @@ export default class Header extends Component {
         <div className="w-full h-full">
           <div className="flex w-full h-full items-center">
             <div className="w-1/2">
-              <h1>Ashan Sandeep</h1>
+              <h1>Feed.com</h1>
             </div>
 
             <div className="w-1/2">
