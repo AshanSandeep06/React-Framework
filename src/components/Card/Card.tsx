@@ -9,7 +9,7 @@ type CardDetails = {
 type CardProps = {};
 
 type CardState = {
-    cardList: CardDetails[]
+    cardList: CardDetails[];
 };
 
 export default class Card extends Component<CardProps, CardState> {
