@@ -17,7 +17,7 @@ export default class Post extends Component<PostProps> {
         <span className="w-full mt-3 flex space-x-3">
           {this.props.tags.map((text) => (
             <Tag tag={text} />
-          ))}
+          ))};
         </span>
       </div>
     );
