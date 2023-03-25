@@ -17,7 +17,7 @@ export default class About extends Component {
           </p>
         </div>
 
-        <div className="flex">
+        <div className="flex space-x-3">
           <Card/>
           <Card/>
           <Card/>
