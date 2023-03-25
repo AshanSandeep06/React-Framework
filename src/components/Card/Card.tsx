@@ -51,12 +51,12 @@ export default class Card extends Component<CardProps, CardState> {
 
   render() {
     return (
-      <div className="flex space-x-3">
+      <div className="grid grid-cols-4 gap-x-5">
         {this.state.cardList.map((card) => (
-          <div className="border border-slate-400 px-3 py-2">
-            <h2 className="text-center text-2xl">{card.title}</h2>
+          <div className="border border-slate-400 px-3 py-5">
+            <h2 className="text-center text-2xl mb-2">{card.title}</h2>
 
-            <p>{card.description}</p>
+            <p className="text-center">{card.description}</p>
           </div>
         ))}
       </div>
