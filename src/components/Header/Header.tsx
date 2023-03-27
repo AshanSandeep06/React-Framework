@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link, NavLink } from "react-router-dom";
 import UserImage from "../../assets/User.png";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 export default class Header extends Component {
   render() {
@@ -46,6 +47,8 @@ export default class Header extends Component {
                   alt="UserImage"
                   className="w-10 h-10 rounded-full"
                 />
+
+                <NavLink to={"/logout"}>{<LogoutIcon />}</NavLink>
               </div>
             </div>
           </div>
