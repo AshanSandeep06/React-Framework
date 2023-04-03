@@ -1,22 +1,23 @@
-import React, { Component } from "react";
-import { Route } from "react-router";
-import { Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import "./Content.css";
+import Home from "../../pages/Home";
 import About from "../../pages/About";
 import Contact from "../../pages/Contact";
-import Home from "../../pages/Home";
 import Login from "../../pages/Login";
+import Profile from "../../pages/Profile";
 
-export default class Content extends Component {
-  render() {
-    return (
-      <div className="mt-20 px-4 pt-3">
+export default function Content() {
+  return (
+    <>
+      <section id="content" className="mt-20">
         <Routes>
-          <Route path="/home" element={<Home />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/logout" element={<Login />}></Route>
+          <Route path="/Home" element={<Home />}></Route>
+          <Route path="/About" element={<About />}></Route>
+          <Route path="/Contact" element={<Contact />}></Route>
+          <Route path="/Profile" element={<Profile />}></Route>
+          <Route path="/" element={<Login />}></Route>
         </Routes>
-      </div>
-    );
-  }
+      </section>
+    </>
+  );
 }
