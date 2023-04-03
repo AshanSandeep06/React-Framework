@@ -9,7 +9,7 @@ import Profile from "../../pages/Profile";
 export default function Content() {
   return (
     <>
-      <section id="content" className="mt-20">
+      <section id="content" className="mt-20 pt-3">
         <Routes>
           <Route path="/Home" element={<Home />}></Route>
           <Route path="/About" element={<About />}></Route>
