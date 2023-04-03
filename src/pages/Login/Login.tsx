@@ -82,7 +82,7 @@ export default function SignIn() {
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
-            <NavLink to={"/"}>
+            <NavLink to={"/home"}>
             <Button
               type="submit"
               fullWidth
