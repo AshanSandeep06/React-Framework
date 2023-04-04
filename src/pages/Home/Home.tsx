@@ -19,14 +19,8 @@ export default class Home extends Component<HomeProps, HomeState> {
         {
           id: "1",
           title: "Lecture Day-01",
-          description: (
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-              adipisci quam, doloribus atque alias pariatur sunt ad perspiciatis
-              explicabo, natus molestiae nam dignissimos excepturi, animi
-              sapiente! Voluptates deserunt expedita animi.
-            </p>
-          ),
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugaadipisci quam, doloribus atque alias pariatur sunt ad perspiciatis explicabo, natus molestiae nam dignissimos excepturi, animisapiente! Voluptates deserunt expedita animi.",
           hoursCount: 8,
           tags: ["Intro", "TypeScript"],
         },
@@ -34,14 +28,8 @@ export default class Home extends Component<HomeProps, HomeState> {
         {
           id: "2",
           title: "Lecture Day-02",
-          description: (
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
-              adipisci quam, doloribus atque alias pariatur sunt ad perspiciatis
-              explicabo, natus molestiae nam dignissimos excepturi, animi
-              sapiente! Voluptates deserunt expedita animi.
-            </p>
-          ),
+          description:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugaadipisci quam, doloribus atque alias pariatur sunt ad perspiciatisexplicabo, natus molestiae nam dignissimos excepturi, animisapiente! Voluptates deserunt expedita animi.",
           hoursCount: 8,
           tags: ["React", "Routing"],
         },
