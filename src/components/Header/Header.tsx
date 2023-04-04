@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <section
       id="header"
-      className="flex w-full h-20 bg-blue-800 shadow-lg shadow-black/20 text-white fixed top-0"
+      className="z-10 flex w-full h-20 bg-blue-800 shadow-lg shadow-black/20 text-white fixed top-0"
     >
       <div className="w-1/2 h-full flex items-center gap-2.5 pl-2">
         <img src={UserImage} alt="UserImage" className="w-10 h-10" />

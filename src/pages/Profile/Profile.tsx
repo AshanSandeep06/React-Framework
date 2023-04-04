@@ -141,6 +141,10 @@ export default class Profile extends Component<profileProps, profileState> {
                 fullWidth={true}
                 placeholder="Enter comma seperated tags"
               />
+
+              <button className="font-poppins font-semibold py-2 bg-blue-800 text-white rounded">
+                <h6>Publish Post</h6>
+              </button>
             </form>
           </div>
         </div>
