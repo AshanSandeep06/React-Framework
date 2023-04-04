@@ -9,9 +9,7 @@ export default class Profile extends Component {
   render() {
     return (
       <section id="profile">
-        <div className="p-6">
-
-        </div>
+        <div className="p-6"></div>
       </section>
     );
   }
