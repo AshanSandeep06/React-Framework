@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Post from "../../components/Post/Post";
 import { PostDetails } from "../../types/PostDetails";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+import PostAddIcon from "@mui/icons-material/PostAdd";
 
 type profileProps = {};
 
@@ -50,7 +52,27 @@ export default class Profile extends Component<profileProps, profileState> {
   render() {
     return (
       <section id="profile">
-        <div className="p-6">
+        <div className="py-6 px-28">
+          <div
+            className="bg-blue-800 text-white 
+          flex justify-between items-center 
+          cursor-pointer p-4 w-full rounded mb-1"
+          >
+            <h4>Create New Post</h4>
+            <AddCircleIcon />
+          </div>
+
+          <div
+            className="border border-slate-400
+          rounded text-slate-400 flex justify-center items-center 
+          cursor-pointer p-8 w-full gap-[9px]"
+          >
+            <PostAddIcon />
+            <h6>Your New Post</h6>
+          </div>
+        </div>
+
+        <div className="py-6 px-24">
           {this.state.postList.map((post) => (
             <Post
               key={post.id}
