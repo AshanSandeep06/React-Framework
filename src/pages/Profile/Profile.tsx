@@ -3,7 +3,7 @@ import Post from "../../components/Post/Post";
 import { PostDetails } from "../../types/PostDetails";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import PostAddIcon from "@mui/icons-material/PostAdd";
-import { Divider } from "@mui/material";
+import { Divider, TextField } from "@mui/material";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 
 type profileProps = {};
@@ -88,13 +88,60 @@ export default class Profile extends Component<profileProps, profileState> {
             <RemoveCircleIcon />
           </div>
 
-          <div
-            className="border border-slate-400
-          rounded text-slate-400 flex justify-center items-center 
-          cursor-pointer p-8 w-full gap-[9px]"
-          >
-            <PostAddIcon />
-            <h6>Your New Post</h6>
+          <div className="border border-slate-400 rounded text-slate-400 cursor-pointer w-full">
+            <form className="flex flex-col gap-[12px] p-8">
+              <TextField
+                required
+                id="txtPostTitle"
+                label="Post Title"
+                variant="outlined"
+                placeholder="Enter Post Title"
+                type="text"
+                fullWidth={true}
+              />
+
+              <TextField
+                required
+                id="txtPostDescription"
+                label="Post Description"
+                variant="outlined"
+                placeholder="Enter Post Description"
+                type="text"
+                fullWidth={true}
+                multiline
+                minRows={5}
+                maxRows={10} //Infinity
+              />
+
+              <TextField
+                required
+                id="txtHoursCount"
+                label="Hours Count"
+                variant="outlined"
+                type="number"
+                fullWidth={true}
+                defaultValue={0}
+              />
+
+              <TextField
+                id="txtLecturerName"
+                label="Lecturer Name"
+                variant="outlined"
+                type="text"
+                fullWidth={true}
+                placeholder="Lecturer Name"
+              />
+
+              <TextField
+                required
+                id="txtTags"
+                label="Tags (Comma seperated tags)"
+                variant="outlined"
+                type="text"
+                fullWidth={true}
+                placeholder="Enter comma seperated tags"
+              />
+            </form>
           </div>
         </div>
 
