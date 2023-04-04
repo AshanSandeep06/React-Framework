@@ -54,6 +54,7 @@ export default class Profile extends Component<profileProps, profileState> {
   render() {
     return (
       <section id="profile">
+        {/* Create New Post */}
         <div className="pt-5 px-28">
           <div
             className="bg-blue-800 text-white 
@@ -76,6 +77,7 @@ export default class Profile extends Component<profileProps, profileState> {
           <Divider className="!my-5" />
         </div>
 
+        {/* Discard Post */}
         <div className="pb-6 px-28">
           <div
             className="bg-blue-800 text-white 
