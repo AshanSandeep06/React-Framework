@@ -89,7 +89,11 @@ export default class Profile extends Component<profileProps, profileState> {
   };
 
   convertTagStringtoTagsArray = (tagString: string): string[] => {
-    return [];
+    if (tagString != "") {
+      return tagString.split(",").map((tag) => tag.trim());
+    } else {
+      return [];
+    }
   };
 
   handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
