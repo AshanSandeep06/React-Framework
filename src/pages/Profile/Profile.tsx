@@ -105,7 +105,7 @@ export default class Profile extends Component<profileProps, profileState> {
     let tagsArray = this.convertTagStringtoTagsArray(tags);
 
     let newPost = {
-      id: postID + 1,
+      id: String(postID + 1),
       title: title,
       description: description,
       hoursCount: hoursCount,
@@ -113,15 +113,8 @@ export default class Profile extends Component<profileProps, profileState> {
       tags: tagsArray,
     };
 
-    this.setState((previousState) => ({
-      ...previousState,
-      postList:[]
-    }));
-
-    // asdsdaasdasdasdas
-    this.setState((previousState) => ({
-      ...previousState,
-      isClickedCreateNewPost: !previousState.isClickedCreateNewPost,
+    this.setState((prevState) => ({
+      postList: [newPost, ...prevState.postList],
     }));
 
     this.clearState();
@@ -153,8 +146,9 @@ export default class Profile extends Component<profileProps, profileState> {
             </div>
 
             <div className="border border-slate-400 rounded text-slate-400 cursor-pointer w-full">
-              <form className="flex flex-col gap-[12px] p-8"
-              onSubmit={this.handleSubmit}
+              <form
+                className="flex flex-col gap-[12px] p-8"
+                onSubmit={this.handleSubmit}
               >
                 <TextField
                   required
