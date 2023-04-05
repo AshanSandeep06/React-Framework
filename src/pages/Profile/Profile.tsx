@@ -88,7 +88,9 @@ export default class Profile extends Component<profileProps, profileState> {
     }));
   };
 
-  convertTagStringtoTagsArray = (tagString: string) => {};
+  convertTagStringtoTagsArray = (tagString: string): string[] => {
+    return [];
+  };
 
   handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
     // Destructing assignment operator
