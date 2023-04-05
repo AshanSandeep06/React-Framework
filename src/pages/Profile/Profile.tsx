@@ -22,7 +22,7 @@ export default class Profile extends Component<profileProps, profileState> {
     super(props);
 
     this.state = {
-      title:"",
+      title: "",
       description: "",
       hoursCount: 2,
       lecturerName: "",
