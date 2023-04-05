@@ -66,7 +66,9 @@ export default class Profile extends Component<profileProps, profileState> {
   }
 
   handleClickCreateNewPost = () => {
-
+    this.setState({
+      isClickedCreateNewPost: !this.state.isClickedCreateNewPost,
+    });
   };
 
   render() {
@@ -78,6 +80,7 @@ export default class Profile extends Component<profileProps, profileState> {
               className="bg-blue-800 text-white 
         flex justify-between items-center 
         cursor-pointer p-4 w-full rounded mb-1"
+        onClick={this.handleClickCreateNewPost}
             >
               <h4>Discard Post</h4>
               <RemoveCircleIcon />
