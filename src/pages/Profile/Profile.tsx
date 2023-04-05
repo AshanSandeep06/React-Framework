@@ -107,10 +107,10 @@ export default class Profile extends Component<profileProps, profileState> {
     let newPost = {
       id: postID + 1,
       title: title,
-      description:description, 
-      hoursCount:hoursCount, 
-      lecturerName:lecturerName, 
-      tags:tagsArray
+      description: description,
+      hoursCount: hoursCount,
+      lecturerName: lecturerName,
+      tags: tagsArray,
     };
 
     this.clearState();
