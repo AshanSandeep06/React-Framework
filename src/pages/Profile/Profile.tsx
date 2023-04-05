@@ -133,6 +133,7 @@ export default class Profile extends Component<profileProps, profileState> {
               />
 
               <TextField
+              className="mb-1"
                 required
                 id="txtTags"
                 label="Tags (Comma seperated tags)"
