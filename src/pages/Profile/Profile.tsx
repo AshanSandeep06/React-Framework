@@ -28,7 +28,7 @@ export default class Profile extends Component<profileProps, profileState> {
       hoursCount: 2,
       lecturerName: "",
       tags: "",
-      isClickedCreateNewPost: true,
+      isClickedCreateNewPost: false,
       postList: [
         {
           id: "1",
