@@ -10,6 +10,7 @@ type profileProps = {};
 
 type profileState = {
   // State Variables / State Properties
+  // Can change or modify these state variables when changing a state.
   title: string;
   description: string;
   hoursCount: number;
