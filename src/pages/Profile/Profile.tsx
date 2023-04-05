@@ -15,6 +15,7 @@ type profileState = {
   lecturerName: string;
   tags: string;
   postList: PostDetails[];
+  isClickedCreateNewPost: Boolean;
 };
 
 export default class Profile extends Component<profileProps, profileState> {
@@ -27,6 +28,7 @@ export default class Profile extends Component<profileProps, profileState> {
       hoursCount: 2,
       lecturerName: "",
       tags: "",
+      isClickedCreateNewPost:false,
       postList: [
         {
           id: "1",
