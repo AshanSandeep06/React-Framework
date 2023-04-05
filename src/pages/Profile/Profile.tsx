@@ -92,7 +92,11 @@ export default class Profile extends Component<profileProps, profileState> {
 
   clearState = () => {
     this.setState((previousState) => ({
-      
+      title: "",
+      description: "",
+      hoursCount: 0,
+      lecturerName: "",
+      tags: "",
     }));
   };
 
