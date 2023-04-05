@@ -9,6 +9,7 @@ import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 type profileProps = {};
 
 type profileState = {
+  // State Variables / State Properties
   title: string;
   description: string;
   hoursCount: number;
@@ -62,6 +63,10 @@ export default class Profile extends Component<profileProps, profileState> {
       ],
     };
   }
+
+  handleClickCreateNewPost = () => {
+
+  };
 
   render() {
     return (
@@ -145,6 +150,7 @@ export default class Profile extends Component<profileProps, profileState> {
               className="bg-blue-800 text-white 
           flex justify-between items-center 
           cursor-pointer p-4 w-full rounded mb-1"
+              onClick={this.handleClickCreateNewPost}
             >
               <h4>Create New Post</h4>
               <AddCircleIcon />
@@ -154,6 +160,7 @@ export default class Profile extends Component<profileProps, profileState> {
               className="border border-slate-400
           rounded text-slate-400 flex justify-center items-center 
           cursor-pointer p-8 w-full gap-[9px]"
+              onClick={this.handleClickCreateNewPost}
             >
               <PostAddIcon />
               <h6>Your New Post</h6>
