@@ -89,6 +89,7 @@ export default class Profile extends Component<profileProps, profileState> {
   };
 
   handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
+    // Destructing assignment operator
     const { title, description, hoursCount, lecturerName, tags } = this.state;
 
     this.clearState();
