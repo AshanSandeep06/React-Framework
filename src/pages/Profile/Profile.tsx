@@ -99,6 +99,9 @@ export default class Profile extends Component<profileProps, profileState> {
   };
 
   handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    // To Prevent refreshing the browser when a form submits.
+    event.preventDefault();
+
     // Destructing assignment operator
     const { title, description, hoursCount, lecturerName, tags } = this.state;
 
@@ -122,6 +125,7 @@ export default class Profile extends Component<profileProps, profileState> {
 
   clearState = () => {
     this.setState((previousState) => ({
+      ...previousState,
       title: "",
       description: "",
       hoursCount: 0,
