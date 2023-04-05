@@ -66,9 +66,7 @@ export default class Profile extends Component<profileProps, profileState> {
   }
 
   handleClickCreateNewPost = () => {
-    this.setState({
-      isClickedCreateNewPost: !this.state.isClickedCreateNewPost,
-    });
+    
   };
 
   render() {
