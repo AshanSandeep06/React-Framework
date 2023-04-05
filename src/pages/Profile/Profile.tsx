@@ -98,7 +98,7 @@ export default class Profile extends Component<profileProps, profileState> {
     }
   };
 
-  handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
+  handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     // Destructing assignment operator
     const { title, description, hoursCount, lecturerName, tags } = this.state;
 
@@ -112,6 +112,10 @@ export default class Profile extends Component<profileProps, profileState> {
       lecturerName: lecturerName,
       tags: tagsArray,
     };
+
+    this.setState((previousState) => ({
+      postList:[]
+    }));
 
     this.clearState();
   };
@@ -142,7 +146,9 @@ export default class Profile extends Component<profileProps, profileState> {
             </div>
 
             <div className="border border-slate-400 rounded text-slate-400 cursor-pointer w-full">
-              <form className="flex flex-col gap-[12px] p-8">
+              <form className="flex flex-col gap-[12px] p-8"
+              onSubmit={this.handleSubmit}
+              >
                 <TextField
                   required
                   id="txtPostTitle"
