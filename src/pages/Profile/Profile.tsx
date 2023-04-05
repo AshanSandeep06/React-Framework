@@ -28,7 +28,7 @@ export default class Profile extends Component<profileProps, profileState> {
       hoursCount: 2,
       lecturerName: "",
       tags: "",
-      isClickedCreateNewPost: false,
+      isClickedCreateNewPost: true,
       postList: [
         {
           id: "1",
@@ -67,7 +67,7 @@ export default class Profile extends Component<profileProps, profileState> {
     return (
       <section id="profile">
         {this.state.isClickedCreateNewPost ? (
-          <div className="pb-6 px-28">
+          <div className="px-28">
             <div
               className="bg-blue-800 text-white 
         flex justify-between items-center 
