@@ -9,6 +9,11 @@ import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 type profileProps = {};
 
 type profileState = {
+  title: string;
+  description: string;
+  hoursCount: number;
+  lecturerName: string;
+  tags: string;
   postList: PostDetails[];
 };
 
@@ -17,6 +22,11 @@ export default class Profile extends Component<profileProps, profileState> {
     super(props);
 
     this.state = {
+      title:"",
+      description: "",
+      hoursCount: 2,
+      lecturerName: "",
+      tags: "",
       postList: [
         {
           id: "1",
@@ -120,7 +130,6 @@ export default class Profile extends Component<profileProps, profileState> {
                 variant="outlined"
                 type="number"
                 fullWidth={true}
-                defaultValue={0}
               />
 
               <TextField
