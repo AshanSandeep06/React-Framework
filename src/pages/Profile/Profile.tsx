@@ -89,7 +89,7 @@ export default class Profile extends Component<profileProps, profileState> {
   };
 
   handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
-    
+    const { title, description, hoursCount, lecturerName, tags } = this.state;
 
     this.clearState();
   };
