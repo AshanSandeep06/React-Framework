@@ -72,7 +72,9 @@ export default class Profile extends Component<profileProps, profileState> {
     }));
   };
 
-  handleInputChange = () => {};
+  handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    
+  };
 
   render() {
     return (
