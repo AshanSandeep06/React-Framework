@@ -102,6 +102,8 @@ export default class Profile extends Component<profileProps, profileState> {
 
     let tagsArray = this.convertTagStringtoTagsArray(tags);
 
+    let newPost = {};
+
     this.clearState();
   };
 
