@@ -21,6 +21,8 @@ type profileState = {
   isClickedCreateNewPost: Boolean;
 };
 
+let postID: number = 3;
+
 export default class Profile extends Component<profileProps, profileState> {
   constructor(props: profileProps) {
     super(props);
