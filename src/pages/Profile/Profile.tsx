@@ -72,9 +72,7 @@ export default class Profile extends Component<profileProps, profileState> {
     }));
   };
 
-  handleInputChange = () => {
-    
-  };
+  handleInputChange = () => {};
 
   render() {
     return (
@@ -103,7 +101,12 @@ export default class Profile extends Component<profileProps, profileState> {
                   fullWidth={true}
                   name="title"
                   value={this.state.title}
-                  onChange={this.handleInputChange}
+                  onChange={(e) => {
+                    this.setState((previousState) => ({
+                      ...previousState,
+                      title: e.target.value,
+                    }));
+                  }}
                 />
 
                 <TextField
