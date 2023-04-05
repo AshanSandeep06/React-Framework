@@ -67,7 +67,7 @@ export default class Profile extends Component<profileProps, profileState> {
     return (
       <section id="profile">
         {this.state.isClickedCreateNewPost ? (
-          <div className="px-28">
+          <div className="pt-5 px-28">
             <div
               className="bg-blue-800 text-white 
         flex justify-between items-center 
