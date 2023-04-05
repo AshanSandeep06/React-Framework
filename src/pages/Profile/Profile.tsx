@@ -88,8 +88,8 @@ export default class Profile extends Component<profileProps, profileState> {
     }));
   };
 
-  handleSubmit=(event: React.FormEvent<HTMLInputElement>)=>{
-
+  handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {
+    
   };
 
   render() {
