@@ -114,7 +114,14 @@ export default class Profile extends Component<profileProps, profileState> {
     };
 
     this.setState((previousState) => ({
+      ...previousState,
       postList:[]
+    }));
+
+    // asdsdaasdasdasdas
+    this.setState((previousState) => ({
+      ...previousState,
+      isClickedCreateNewPost: !previousState.isClickedCreateNewPost,
     }));
 
     this.clearState();
