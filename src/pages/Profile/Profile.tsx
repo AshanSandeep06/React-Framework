@@ -66,100 +66,106 @@ export default class Profile extends Component<profileProps, profileState> {
   render() {
     return (
       <section id="profile">
-        {/* Create New Post */}
-        <div className="pt-5 px-28">
-          <div
-            className="bg-blue-800 text-white 
+        {this.state.isClickedCreateNewPost ? (
+          <div className="pb-6 px-28">
+            <div
+              className="bg-blue-800 text-white 
+        flex justify-between items-center 
+        cursor-pointer p-4 w-full rounded mb-1"
+            >
+              <h4>Discard Post</h4>
+              <RemoveCircleIcon />
+            </div>
+
+            <div className="border border-slate-400 rounded text-slate-400 cursor-pointer w-full">
+              <form className="flex flex-col gap-[12px] p-8">
+                <TextField
+                  required
+                  id="txtPostTitle"
+                  label="Post Title"
+                  variant="outlined"
+                  placeholder="Enter Post Title"
+                  type="text"
+                  fullWidth={true}
+                />
+
+                <TextField
+                  required
+                  id="txtPostDescription"
+                  label="Post Description"
+                  variant="outlined"
+                  placeholder="Enter Post Description"
+                  type="text"
+                  fullWidth={true}
+                  multiline
+                  minRows={5}
+                  maxRows={10} //Infinity
+                />
+
+                <TextField
+                  required
+                  id="txtHoursCount"
+                  label="Hours Count"
+                  variant="outlined"
+                  type="number"
+                  fullWidth={true}
+                />
+
+                <TextField
+                  id="txtLecturerName"
+                  label="Lecturer Name"
+                  variant="outlined"
+                  type="text"
+                  fullWidth={true}
+                  placeholder="Lecturer Name"
+                />
+
+                <TextField
+                  className="!mb-2"
+                  required
+                  id="txtTags"
+                  label="Tags (Comma seperated tags)"
+                  variant="outlined"
+                  type="text"
+                  fullWidth={true}
+                  placeholder="Enter comma seperated tags"
+                />
+
+                <button className="font-poppins font-semibold py-2 bg-blue-800 text-white rounded">
+                  <h6>Publish Post</h6>
+                </button>
+              </form>
+            </div>
+
+            <Divider className="!my-5" />
+          </div>
+        ) : (
+          <div className="pt-5 px-28">
+            <div
+              className="bg-blue-800 text-white 
           flex justify-between items-center 
           cursor-pointer p-4 w-full rounded mb-1"
-          >
-            <h4>Create New Post</h4>
-            <AddCircleIcon />
-          </div>
+            >
+              <h4>Create New Post</h4>
+              <AddCircleIcon />
+            </div>
 
-          <div
-            className="border border-slate-400
+            <div
+              className="border border-slate-400
           rounded text-slate-400 flex justify-center items-center 
           cursor-pointer p-8 w-full gap-[9px]"
-          >
-            <PostAddIcon />
-            <h6>Your New Post</h6>
-          </div>
+            >
+              <PostAddIcon />
+              <h6>Your New Post</h6>
+            </div>
 
-          <Divider className="!my-5" />
-        </div>
+            <Divider className="!my-5" />
+          </div>
+        )}
+
+        {/* Create New Post */}
 
         {/* Discard Post */}
-        <div className="pb-6 px-28">
-          <div
-            className="bg-blue-800 text-white 
-          flex justify-between items-center 
-          cursor-pointer p-4 w-full rounded mb-1"
-          >
-            <h4>Discard Post</h4>
-            <RemoveCircleIcon />
-          </div>
-
-          <div className="border border-slate-400 rounded text-slate-400 cursor-pointer w-full">
-            <form className="flex flex-col gap-[12px] p-8">
-              <TextField
-                required
-                id="txtPostTitle"
-                label="Post Title"
-                variant="outlined"
-                placeholder="Enter Post Title"
-                type="text"
-                fullWidth={true}
-              />
-
-              <TextField
-                required
-                id="txtPostDescription"
-                label="Post Description"
-                variant="outlined"
-                placeholder="Enter Post Description"
-                type="text"
-                fullWidth={true}
-                multiline
-                minRows={5}
-                maxRows={10} //Infinity
-              />
-
-              <TextField
-                required
-                id="txtHoursCount"
-                label="Hours Count"
-                variant="outlined"
-                type="number"
-                fullWidth={true}
-              />
-
-              <TextField
-                id="txtLecturerName"
-                label="Lecturer Name"
-                variant="outlined"
-                type="text"
-                fullWidth={true}
-                placeholder="Lecturer Name"
-              />
-
-              <TextField
-                className="!mb-2"
-                required
-                id="txtTags"
-                label="Tags (Comma seperated tags)"
-                variant="outlined"
-                type="text"
-                fullWidth={true}
-                placeholder="Enter comma seperated tags"
-              />
-
-              <button className="font-poppins font-semibold py-2 bg-blue-800 text-white rounded">
-                <h6>Publish Post</h6>
-              </button>
-            </form>
-          </div>
-        </div>
 
         <div className="pb-6 px-24">
           {this.state.postList.map((post) => (
