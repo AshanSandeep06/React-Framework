@@ -27,7 +27,7 @@ export default class Profile extends Component<profileProps, profileState> {
     this.state = {
       title: "",
       description: "",
-      hoursCount: 2,
+      hoursCount: 0,
       lecturerName: "",
       tags: "",
       isClickedCreateNewPost: false,
@@ -97,6 +97,7 @@ export default class Profile extends Component<profileProps, profileState> {
                   placeholder="Enter Post Title"
                   type="text"
                   fullWidth={true}
+                  value={this.state.title}
                 />
 
                 <TextField
@@ -110,6 +111,7 @@ export default class Profile extends Component<profileProps, profileState> {
                   multiline
                   minRows={5}
                   maxRows={10} //Infinity
+                  value={this.state.description}
                 />
 
                 <TextField
@@ -119,6 +121,7 @@ export default class Profile extends Component<profileProps, profileState> {
                   variant="outlined"
                   type="number"
                   fullWidth={true}
+                  value={this.state.hoursCount}
                 />
 
                 <TextField
@@ -128,6 +131,7 @@ export default class Profile extends Component<profileProps, profileState> {
                   type="text"
                   fullWidth={true}
                   placeholder="Lecturer Name"
+                  value={this.state.lecturerName}
                 />
 
                 <TextField
@@ -139,6 +143,7 @@ export default class Profile extends Component<profileProps, profileState> {
                   type="text"
                   fullWidth={true}
                   placeholder="Enter comma seperated tags"
+                  value={this.state.tags}
                 />
 
                 <button className="font-poppins font-semibold py-2 bg-blue-800 text-white rounded">
