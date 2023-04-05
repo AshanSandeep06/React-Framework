@@ -5,6 +5,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import PostAddIcon from "@mui/icons-material/PostAdd";
 import { Divider, TextField } from "@mui/material";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
+import { log } from "console";
 
 type profileProps = {};
 
