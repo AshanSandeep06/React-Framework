@@ -73,17 +73,17 @@ export default class Profile extends Component<profileProps, profileState> {
   };
 
   handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const {name, value, type} = event.target;
+    const { name, value, type } = event.target;
 
     const inputHoursCount = type == "number" ? parseInt(value) : value;
 
-    if(name == "hoursCount" && Number(inputHoursCount) < 0 ){
+    if (name == "hoursCount" && Number(inputHoursCount) < 0) {
       return;
     }
 
     this.setState((prevState) => ({
       ...prevState,
-      [name]:value
+      [name]: value,
     }));
   };
 
