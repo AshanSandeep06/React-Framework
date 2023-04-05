@@ -92,6 +92,8 @@ export default class Profile extends Component<profileProps, profileState> {
     // Destructing assignment operator
     const { title, description, hoursCount, lecturerName, tags } = this.state;
 
+    
+
     this.clearState();
   };
 
