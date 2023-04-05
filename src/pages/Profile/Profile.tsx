@@ -91,7 +91,9 @@ export default class Profile extends Component<profileProps, profileState> {
   handleSubmit = (event: React.FormEvent<HTMLInputElement>) => {};
 
   clearState = () => {
-    
+    this.setState((previousState) => ({
+      
+    }));
   };
 
   render() {
