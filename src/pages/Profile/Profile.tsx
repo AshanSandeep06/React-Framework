@@ -72,6 +72,10 @@ export default class Profile extends Component<profileProps, profileState> {
     }));
   };
 
+  handleInputChange = () => {
+    
+  };
+
   render() {
     return (
       <section id="profile">
@@ -97,7 +101,9 @@ export default class Profile extends Component<profileProps, profileState> {
                   placeholder="Enter Post Title"
                   type="text"
                   fullWidth={true}
+                  name="title"
                   value={this.state.title}
+                  onChange={this.handleInputChange}
                 />
 
                 <TextField
@@ -111,7 +117,9 @@ export default class Profile extends Component<profileProps, profileState> {
                   multiline
                   minRows={5}
                   maxRows={10} //Infinity
+                  name="description"
                   value={this.state.description}
+                  onChange={this.handleInputChange}
                 />
 
                 <TextField
@@ -121,7 +129,9 @@ export default class Profile extends Component<profileProps, profileState> {
                   variant="outlined"
                   type="number"
                   fullWidth={true}
+                  name="hoursCount"
                   value={this.state.hoursCount}
+                  onChange={this.handleInputChange}
                 />
 
                 <TextField
@@ -131,7 +141,9 @@ export default class Profile extends Component<profileProps, profileState> {
                   type="text"
                   fullWidth={true}
                   placeholder="Lecturer Name"
+                  name="lecturerName"
                   value={this.state.lecturerName}
+                  onChange={this.handleInputChange}
                 />
 
                 <TextField
@@ -143,7 +155,9 @@ export default class Profile extends Component<profileProps, profileState> {
                   type="text"
                   fullWidth={true}
                   placeholder="Enter comma seperated tags"
+                  name="tags"
                   value={this.state.tags}
+                  onChange={this.handleInputChange}
                 />
 
                 <button className="font-poppins font-semibold py-2 bg-blue-800 text-white rounded">
