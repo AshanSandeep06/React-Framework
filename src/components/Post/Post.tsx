@@ -17,15 +17,17 @@ export default class Post extends Component<PostProps> {
         <h3 className="text-center">{this.props.title}</h3>
         <p>{this.props.description}</p>
 
-        <span className="w-full mt-3 flex space-x-3">
+        <span className="w-full mt-3 flex justify-between">
+          <span className="flex space-x-5">
           {this.props.tags.map((text, index) => (
             <Tag key={index} tag={text} />
           ))}
-        </span>
+          </span>
 
-        <button>
-          <DeleteIcon />
-        </button>
+          <button className="">
+            <DeleteIcon />
+          </button>
+        </span>
       </div>
     );
   }
