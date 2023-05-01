@@ -325,7 +325,6 @@ export default class Profile extends Component<profileProps, profileState> {
           {this.state.postList.map((post) => (
             <Post
               key={post._id}
-              _id={post._id}
               title={post.title}
               description={post.description}
               hoursCount={post.hoursCount}

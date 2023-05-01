@@ -10,6 +10,7 @@ type PostProps = {
   hoursCount?: number;
   lecturerName?: string;
   tags: string[];
+  // Callback function
   removePostFromPostList: (postID: string) => void;
 };
 
