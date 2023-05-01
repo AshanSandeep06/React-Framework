@@ -6,7 +6,7 @@ import PostAddIcon from "@mui/icons-material/PostAdd";
 import { Divider, TextField } from "@mui/material";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import { log } from "console";
-import axios from "../../axios"
+import axios from "../../axios";
 
 type profileProps = {};
 
@@ -38,38 +38,57 @@ export default class Profile extends Component<profileProps, profileState> {
       isClickedCreateNewPost: false,
       categoryName: "",
       postList: [
-        {
-          id: "1",
-          title: "Lecture Day-01",
-          description:
-            "Lecture D01 - Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin",
-          hoursCount: 3,
-          lecturerName: "Sanu",
-          tags: ["Intro", "Type-Script"],
-        },
+        // {
+        //   id: "1",
+        //   title: "Lecture Day-01",
+        //   description:
+        //     "Lecture D01 - Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin",
+        //   hoursCount: 3,
+        //   lecturerName: "Sanu",
+        //   tags: ["Intro", "Type-Script"],
+        // },
 
-        {
-          id: "2",
-          title: "Lecture Day-02",
-          description:
-            "Lecture D02 - Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin",
-          hoursCount: 6,
-          lecturerName: "Sanu",
-          tags: ["React", "React-Routing"],
-        },
+        // {
+        //   id: "2",
+        //   title: "Lecture Day-02",
+        //   description:
+        //     "Lecture D02 - Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin",
+        //   hoursCount: 6,
+        //   lecturerName: "Sanu",
+        //   tags: ["React", "React-Routing"],
+        // },
 
-        {
-          id: "3",
-          title: "Lecture Day-03",
-          description:
-            "Lecture D03 - Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin",
-          hoursCount: 3,
-          lecturerName: "Chanu",
-          tags: ["React-DOM", "Components"],
-        },
+        // {
+        //   id: "3",
+        //   title: "Lecture Day-03",
+        //   description:
+        //     "Lecture D03 - Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin  Lorem ipsum dolor sit amet consectetur, adipisicin",
+        //   hoursCount: 3,
+        //   lecturerName: "Chanu",
+        //   tags: ["React-DOM", "Components"],
+        // },
       ],
     };
   }
+
+  componentDidMount(): void {
+    this.getAllPosts();
+  }
+
+  getAllPosts = () => {
+    axios
+      .get("post")
+      .then((res) => {
+        console.log(res);
+        this.setState((prevState) => ({
+          ...prevState,
+          postList: res.data.response,
+        }));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   handleClickCreateNewPost = () => {
     this.setState((previousState) => ({
@@ -106,7 +125,8 @@ export default class Profile extends Component<profileProps, profileState> {
     event.preventDefault();
 
     // Destructing assignment operator
-    const { title, description, hoursCount, lecturerName, tags } = this.state;
+    const { title, description, hoursCount, lecturerName, tags, categoryName } =
+      this.state;
 
     let tagsArray = this.convertTagStringtoTagsArray(tags);
 
@@ -117,6 +137,7 @@ export default class Profile extends Component<profileProps, profileState> {
       hoursCount: hoursCount,
       lecturerName: lecturerName,
       tags: tagsArray,
+      categoryName: categoryName,
     };
 
     //Using React
@@ -124,20 +145,21 @@ export default class Profile extends Component<profileProps, profileState> {
     //   postList: [newPost, ...prevState.postList],
     // }));
     // this.clearState();
- 
-    // Using POST API Call
-    axios.post("post", newPost)
-    .then((res) => {
-      console.log(res);
 
-      this.setState((prevState) => ({
-        postList: [res.data.response, ...prevState.postList]
-      }));
-      this.clearState();
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+    // Using POST API Call
+    axios
+      .post("post", newPost)
+      .then((res) => {
+        console.log(res);
+
+        this.setState((prevState) => ({
+          postList: [res.data.response, ...prevState.postList],
+        }));
+        this.clearState();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   clearState = () => {
@@ -148,6 +170,7 @@ export default class Profile extends Component<profileProps, profileState> {
       hoursCount: 0,
       lecturerName: "",
       tags: "",
+      categoryName: "",
     }));
   };
 
@@ -187,6 +210,18 @@ export default class Profile extends Component<profileProps, profileState> {
                       title: e.target.value,
                     }));
                   }}
+                />
+
+                <TextField
+                  label="Category"
+                  type="text"
+                  variant="outlined"
+                  name="categoryName"
+                  placeholder="Enter Category Name"
+                  onChange={this.handleInputChange}
+                  value={this.state.categoryName}
+                  fullWidth={true}
+                  required
                 />
 
                 <TextField
@@ -284,7 +319,7 @@ export default class Profile extends Component<profileProps, profileState> {
         <div className="pb-6 px-24">
           {this.state.postList.map((post) => (
             <Post
-              key={post.id}
+              key={post._id}
               title={post.title}
               description={post.description}
               hoursCount={post.hoursCount}
