@@ -24,7 +24,6 @@ export default class Home extends Component<HomeProps, HomeState> {
         //   hoursCount: 8,
         //   tags: ["Intro", "TypeScript"],
         // },
-
         // {
         //   id: "2",
         //   title: "Lecture Day-02",
@@ -56,7 +55,7 @@ export default class Home extends Component<HomeProps, HomeState> {
       <div className="p-6">
         {this.state.postList.map((post) => (
           <Post
-            key={post._id}
+            _id={post._id}
             title={post.title}
             description={post.description}
             hoursCount={post.hoursCount}

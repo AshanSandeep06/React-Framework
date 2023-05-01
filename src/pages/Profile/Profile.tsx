@@ -175,7 +175,7 @@ export default class Profile extends Component<profileProps, profileState> {
   removePostFromPostList = (postID: string) => {
     this.setState((prevState) => ({
       ...prevState,
-      postList: prevState.postList.filter((post) => post._id !== postID)
+      postList: prevState.postList.filter((post) => post._id !== postID),
     }));
   };
 
@@ -324,6 +324,7 @@ export default class Profile extends Component<profileProps, profileState> {
         <div className="pb-6 px-24">
           {this.state.postList.map((post) => (
             <Post
+              _id={post._id}
               key={post._id}
               title={post.title}
               description={post.description}

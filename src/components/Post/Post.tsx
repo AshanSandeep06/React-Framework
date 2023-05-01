@@ -11,7 +11,7 @@ type PostProps = {
   lecturerName?: string;
   tags: string[];
   // Callback function
-  removePostFromPostList: (postID: string) => void;
+  removePostFromPostList?: (postID: string) => void;
 };
 
 export default class Post extends Component<PostProps> {
@@ -39,7 +39,7 @@ export default class Post extends Component<PostProps> {
         <span className="w-full mt-3 flex justify-between">
           <span className="flex space-x-5">
             {this.props.tags.map((text, index) => (
-              <Tag key={this.props._id} tag={text} />
+              <Tag key={index} tag={text} />
             ))}
           </span>
 

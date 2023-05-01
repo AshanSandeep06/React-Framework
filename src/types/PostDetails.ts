@@ -1,5 +1,5 @@
 export type PostDetails = {
-    _id?: string;
+    _id: string;
     title: string;
     description: string;
     hoursCount?: number;
