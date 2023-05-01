@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Tag from "../Tag";
 import DeleteIcon from "@mui/icons-material/Delete";
+import axios from "../../axios";
 
 type PostProps = {
   _id: string;
@@ -9,11 +10,21 @@ type PostProps = {
   hoursCount?: number;
   lecturerName?: string;
   tags: string[];
+  removePostFromPostList: (postID: string) => void;
 };
 
 export default class Post extends Component<PostProps> {
   deletePost = (postID: string) => {
+    axios
+      .delete(`post/${postID}`)
+      .then((res) => {
+        console.log(res);
 
+        
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   render() {
