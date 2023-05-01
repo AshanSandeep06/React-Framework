@@ -47,7 +47,6 @@ export default class Profile extends Component<profileProps, profileState> {
         //   lecturerName: "Sanu",
         //   tags: ["Intro", "Type-Script"],
         // },
-
         // {
         //   id: "2",
         //   title: "Lecture Day-02",
@@ -57,7 +56,6 @@ export default class Profile extends Component<profileProps, profileState> {
         //   lecturerName: "Sanu",
         //   tags: ["React", "React-Routing"],
         // },
-
         // {
         //   id: "3",
         //   title: "Lecture Day-03",
@@ -73,7 +71,7 @@ export default class Profile extends Component<profileProps, profileState> {
 
   componentDidMount(): void {
     this.getAllPosts();
-  };
+  }
 
   getAllPosts = () => {
     axios
@@ -172,6 +170,10 @@ export default class Profile extends Component<profileProps, profileState> {
       tags: "",
       categoryName: "",
     }));
+  };
+
+  removePostFromList = () => {
+    
   };
 
   render() {
@@ -320,11 +322,13 @@ export default class Profile extends Component<profileProps, profileState> {
           {this.state.postList.map((post) => (
             <Post
               key={post._id}
+              _id={post._id}
               title={post.title}
               description={post.description}
               hoursCount={post.hoursCount}
               lecturerName={post.lecturerName}
               tags={post.tags}
+              removePostFromPostList={this.removePostFromPostList}
             />
           ))}
         </div>
