@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quiz App</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+			font-size: 36px;
+			color: #333;
+		}
+		
+		.container {
+			max-width: 800px;
+			margin: auto;
+			padding: 20px;
+			background-color: #fff;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			border-radius: 5px;
+			margin-top: 30px;
+		}
+		
+		.question {
+			margin-bottom: 20px;
+			font-size: 20px;
+			color: #333;
+		}
+		
+		.answers {
+			display: flex;
+			flex-direction: column;
+		}
+		
+		.answer {
+			padding: 10px;
+			margin-bottom: 10px;
+			background-color: #f2f2f2;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+		}
+		
+		.answer:hover {
+			background-color: #ccc;
+		}
+		
+		.btn {
+			display: block;
+			margin-top: 20px;
+			padding: 10px 20px;
+			background-color: #333;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+			font-size: 20px;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+		}
+		
+		.btn:hover {
+			background-color: #444;
+		}
+	</style>
+</head>
+<body>
+	<h1>Quiz App</h1>
+	<div class="container">
+		<div class="question">What is the capital of France?</div>
+		<div class="answers">
+			<div class="answer">Paris</div>
+			<div class="answer">London</div>
+			<div class="answer">Madrid</div>
+			<div class="answer">Rome</div>
+		</div>
+		<button class="btn">Next</button>
+	</div>
+</body>
+</html>
