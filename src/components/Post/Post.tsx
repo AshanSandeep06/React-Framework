@@ -20,7 +20,9 @@ export default class Post extends Component<PostProps> {
       .then((res) => {
         console.log(res);
 
-        
+        if (this.props.removePostFromPostList) {
+          this.props.removePostFromPostList(postID);
+        }
       })
       .catch((error) => {
         console.log(error);
