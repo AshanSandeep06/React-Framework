@@ -172,8 +172,11 @@ export default class Profile extends Component<profileProps, profileState> {
     }));
   };
 
-  removePostFromList = () => {
-    
+  removePostFromList = (postID: string) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      postList: prevState.postList.filter((post) => post._id !== postID)
+    }));
   };
 
   render() {
