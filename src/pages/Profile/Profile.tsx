@@ -73,7 +73,7 @@ export default class Profile extends Component<profileProps, profileState> {
 
   componentDidMount(): void {
     this.getAllPosts();
-  }
+  };
 
   getAllPosts = () => {
     axios
