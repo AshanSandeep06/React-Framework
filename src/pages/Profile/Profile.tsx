@@ -6,6 +6,7 @@ import PostAddIcon from "@mui/icons-material/PostAdd";
 import { Divider, TextField } from "@mui/material";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 import { log } from "console";
+import axios from "../../axios"
 
 type profileProps = {};
 
@@ -19,6 +20,7 @@ type profileState = {
   tags: string;
   postList: PostDetails[];
   isClickedCreateNewPost: Boolean;
+  categoryName: string;
 };
 
 let postID: number = 3;
@@ -34,6 +36,7 @@ export default class Profile extends Component<profileProps, profileState> {
       lecturerName: "",
       tags: "",
       isClickedCreateNewPost: false,
+      categoryName: "",
       postList: [
         {
           id: "1",
@@ -116,11 +119,25 @@ export default class Profile extends Component<profileProps, profileState> {
       tags: tagsArray,
     };
 
-    this.setState((prevState) => ({
-      postList: [newPost, ...prevState.postList],
-    }));
+    //Using React
+    // this.setState((prevState) => ({
+    //   postList: [newPost, ...prevState.postList],
+    // }));
+    // this.clearState();
+ 
+    // Using POST API Call
+    axios.post("post", newPost)
+    .then((res) => {
+      console.log(res);
 
-    this.clearState();
+      this.setState((prevState) => ({
+        postList: [res.data.response, ...prevState.postList]
+      }));
+      this.clearState();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   };
 
   clearState = () => {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Tag from "../Tag";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 type PostProps = {
   title: string;
@@ -21,6 +22,10 @@ export default class Post extends Component<PostProps> {
             <Tag key={index} tag={text} />
           ))}
         </span>
+
+        <button>
+          <DeleteIcon />
+        </button>
       </div>
     );
   }
