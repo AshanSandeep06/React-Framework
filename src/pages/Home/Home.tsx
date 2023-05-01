@@ -16,23 +16,23 @@ export default class Home extends Component<HomeProps, HomeState> {
 
     this.state = {
       postList: [
-        {
-          id: "1",
-          title: "Lecture Day-01",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugaadipisci quam, doloribus atque alias pariatur sunt ad perspiciatis explicabo, natus molestiae nam dignissimos excepturi, animisapiente! Voluptates deserunt expedita animi.",
-          hoursCount: 8,
-          tags: ["Intro", "TypeScript"],
-        },
+        // {
+        //   id: "1",
+        //   title: "Lecture Day-01",
+        //   description:
+        //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugaadipisci quam, doloribus atque alias pariatur sunt ad perspiciatis explicabo, natus molestiae nam dignissimos excepturi, animisapiente! Voluptates deserunt expedita animi.",
+        //   hoursCount: 8,
+        //   tags: ["Intro", "TypeScript"],
+        // },
 
-        {
-          id: "2",
-          title: "Lecture Day-02",
-          description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugaadipisci quam, doloribus atque alias pariatur sunt ad perspiciatisexplicabo, natus molestiae nam dignissimos excepturi, animisapiente! Voluptates deserunt expedita animi.",
-          hoursCount: 8,
-          tags: ["React", "Routing"],
-        },
+        // {
+        //   id: "2",
+        //   title: "Lecture Day-02",
+        //   description:
+        //     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugaadipisci quam, doloribus atque alias pariatur sunt ad perspiciatisexplicabo, natus molestiae nam dignissimos excepturi, animisapiente! Voluptates deserunt expedita animi.",
+        //   hoursCount: 8,
+        //   tags: ["React", "Routing"],
+        // },
       ],
     };
   }
@@ -56,7 +56,7 @@ export default class Home extends Component<HomeProps, HomeState> {
       <div className="p-6">
         {this.state.postList.map((post) => (
           <Post
-            key={post.id}
+            key={post._id}
             title={post.title}
             description={post.description}
             hoursCount={post.hoursCount}
