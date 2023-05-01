@@ -153,7 +153,7 @@ export default class Profile extends Component<profileProps, profileState> {
         console.log(res);
 
         this.setState((prevState) => ({
-          postList: [res.data.response, ...prevState.postList],
+          postList: [...prevState.postList, res.data.response],
         }));
         this.clearState();
       })
